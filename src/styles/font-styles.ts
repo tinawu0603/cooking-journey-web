@@ -10,7 +10,7 @@ const H1 = styled.h1`
   margin-top: 10px;
   margin-bottom: 10px;
   line-height: 140%;
-  @media ${media.tablet} {
+  ${media.tablet} {
     font-size: 50px;
   }
 `;
@@ -21,7 +21,7 @@ const H2 = styled.h2`
   margin-top: 10px;
   margin-bottom: 10px;
   line-height: 140%;
-  @media ${media.tablet} {
+  ${media.tablet} {
     font-size: 32px;
   }
 `;
@@ -32,7 +32,7 @@ const H3 = styled.h3`
   margin-top: 10px;
   margin-bottom: 10px;
   line-height: 140%;
-  @media ${media.tablet} {
+  ${media.tablet} {
     font-size: 24px;
   }
 `;
@@ -43,7 +43,7 @@ const P1 = styled.p`
   margin-top: 10px;
   margin-bottom: 10px;
   line-height: 140%;
-  @media ${media.tablet} {
+  ${media.tablet} {
     font-size: 16px;
   }
 `;

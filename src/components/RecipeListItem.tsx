@@ -1,6 +1,6 @@
 import React from 'react';
 import { Recipe } from '../types';
-import IngredientItem from './IngredientItem';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { P1 } from '../styles/font-styles';
 
@@ -13,15 +13,22 @@ const RecipeListItem = (props: IProps) => {
     return null;
   }
   return (
-    <RecipeRow className="row">
-      <div className="col-sm-6">
-        <P1>{props.recipe.Name}</P1>
-      </div>
-      <div className="col-sm-6">
-        <P1>{props.recipe.DateCreated}</P1>
-      </div>
+    <RecipeRow>
+      <RecipeLink to={`/recipes/${props.recipe.Id}`} className="row">
+        <div className="col-sm-6">
+          <P1>{props.recipe.Name}</P1>
+        </div>
+        <div className="col-sm-6">
+          <P1>{getDate(props.recipe.DateCreated)}</P1>
+        </div>
+      </RecipeLink>
     </RecipeRow>
   )
+}
+
+function getDate (date: Date): string {
+  const _date = new Date(date);
+  return `${_date.getFullYear()}-${_date.getMonth() + 1}-${_date.getDate()}`;
 }
 
 // {
@@ -35,6 +42,11 @@ const RecipeRow = styled.div`
   margin: 10px 0px;
   border-radius: 10px;
   background-color: white;
+`;
+
+const RecipeLink = styled(Link)`
+  text-decoration: none;
+  color: inherit;
 `;
 
 export default RecipeListItem;

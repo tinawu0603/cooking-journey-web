@@ -8,18 +8,12 @@ export const removeRecipe = async (recipeId: string) => {
 }
 
 export const getAllRecipes = async (): Promise<Recipe[]> => {
-  const recipes = await fetch(`${API_URL}/recipes/`, {
-    headers: {
-      'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin': '*'
-    },
-  })
+  const recipes = await fetch(`${API_URL}/recipes/`, {})
   return recipes.json();
 }
 
-export const getRecipe = async (recipeId: string): Promise<Recipe[]> => {
-  const recipes = await fetch(`${API_URL}/recipes/${recipeId}/`, {})
-
+export const getRecipe = async (recipeId: string): Promise<Recipe> => {
+  const recipes = await fetch(`${API_URL}/recipes/${recipeId}/`, {});
   return recipes.json();
 }
 

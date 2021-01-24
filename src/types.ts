@@ -17,6 +17,10 @@ export interface ActionType {
   payload: any;
 }
 
+export interface ParamTypes {
+  recipeId: string
+}
+
 export interface RecipeState {
   recipes: Recipe[]
 }
